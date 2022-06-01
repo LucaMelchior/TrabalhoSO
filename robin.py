@@ -16,35 +16,35 @@ def main():
     print("Realizando o processo do temporizador 1:")
     process_initial_time = time.time()
     run_all_processes(temporizador1)
-    ################################################
+    # Inicio da contagem do temporizador 1
     execution_time = time.time() - process_initial_time
     print('Resultado do temporizador 1: ' + str(execution_time) + ' segundos\n')
     # Começo do temporizador 2
     print("Realizando o processo do temporizador 2:")
     process_initial_time = time.time()
     run_all_processes(temporizador2)
-    ################################################
+    # Inicio da contagem do temporizador 2
     execution_time = time.time() - process_initial_time
     print('Resultado do temporizador 2: ' + str(execution_time) + ' segundos\n')
     # Começo do temporizador 3
     print("Realizando o processo do temporizador 3")
     process_initial_time = time.time()
     run_all_processes(temporizador3)
-    ################################################
+    # Inicio da contagem do temporizador 3
     execution_time = time.time() - process_initial_time
     print('Resultado do temporizador 3: ' + str(execution_time) + ' segundos\n')
     # Começo do temporizador 4
     print("Realizando o processo do temporizador 4:")
     process_initial_time = time.time()
     run_all_processes(temporizador4)
-    ################################################
+    # Inicio da contagem do temporizador 4
     execution_time = time.time() - process_initial_time
     print('Resultado do temporizador 4: ' + str(execution_time) + ' segundos\n')
     # Total no todo
     final_time = time.time() - initial_time
     print('Total: ' + str(final_time) + ' segundos\n')
 
-# Funções
+# Processamento do  calculo temporizador 1
 def temp1(number = 1, potency = 1, temporizador = 1):
     process_initial_time = time.time()
     multiplier = 2
@@ -53,7 +53,7 @@ def temp1(number = 1, potency = 1, temporizador = 1):
             number *= multiplier
             potency += 1
     return [number, potency]
-################################################
+# Processamento do calculo temprozador 2
 def temp2(number = 1, potency = 1, temporizador = 1):
     process_initial_time = time.time()
     multiplier = 3
@@ -62,7 +62,7 @@ def temp2(number = 1, potency = 1, temporizador = 1):
             number *= multiplier
             potency += 1
     return [number, potency]
- ################################################   
+ # Processamento do calculo do temporizador 3   
 def temp3(number = 1, potency = 1, temporizador = 1):
     process_initial_time = time.time()
     multiplier = 5
@@ -81,10 +81,10 @@ def run_all_processes(temporizador = 1):
     queue.put(1)
     queue.put(2)
     queue.put(3)
-   ################################################
+   # Enquanto queue estiver vazio continuar processo
     while not queue.empty():
         process = queue.get()
-        ################################################
+        
         if process == 1:
             temp1_numb = temp1(temp1_numb[0], temp1_numb[1], temporizador)
             if temp1_numb[1] <= 1000000 :
